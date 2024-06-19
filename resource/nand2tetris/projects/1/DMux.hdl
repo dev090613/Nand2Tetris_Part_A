@@ -12,5 +12,10 @@ CHIP DMux {
     OUT a, b;
 
     PARTS:
-    //// Replace this comment with your code.
-}
+    Not(in=sel, out=selout);
+
+    Nand(a=in, b=selout, out=aout);
+    Not(in=aout, out=a);
+
+    Nand(a=sel, b=in, out=bout);
+    Not(in=bout, out=b);}
