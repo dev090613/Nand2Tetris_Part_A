@@ -3,6 +3,7 @@
 // by Nisan and Schocken, MIT Press.
 // File name: projects/1/Mux4Way16.hdl
 /**
+ * interface specification
  * 4-way 16-bit multiplexor:
  * out = a if sel = 00
  *       b if sel = 01
