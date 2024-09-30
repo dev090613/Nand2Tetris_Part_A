@@ -131,10 +131,13 @@ n비트의 2진법 체계에는 다음과 같은 특징들이 있다. 1) 음수�
 
 - **Why?**
 
-- **What?** 주어진 숫자(16-bit input)에 1을 더한다.
+- **What?** 주어진 숫자(16-bit input)에 1을 더한다. register에 저장된 값을 1 증가시킨다.
+  
   - **Interface** ![image-20240822223638322](images/image-20240822223638322.png)
+  
+- **How?** 개별 비트에 대하여 1-bit Half Adder를 연쇄적으로 적용한다. 이때, 최초의 HA에 1을 더한다. 
 
-- **How?** 개별 비트에 대하여 1-bit Half Adder를 연쇄적으로 적용한다. 이때, 최초의 HA에 1을 더한다.
+  - HA의 개수는 구현하려는 register의 capacity에 의존한다. 즉, n-bit incrementer는 n개의 HA가 필요하다.
 
   - ~~~shell
     # * 16-bit incrementer:

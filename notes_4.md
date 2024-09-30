@@ -30,5 +30,84 @@ CPU 내에 위치한 레지스터는 두 종류로 나눌 수 있다.
 
 16비트 컴퓨터라는 말은 CPU와 메모리가 16비트 값들을 처리하고 이동하고 저장하도록 설계되었다는 뜻이다.
 
+---
+
+**Key concepts:** op codes, mnemonics, binary machine language, symbolic machine language, assembly, low-level arithmetic, logical, addressing, branching, and I/O commands, CPU emulation, low-level programming.
 
 
+
+---
+
+![image-20240901183109173](images/image-20240901183109173.png)
+
+![image-20240901183120610](images/image-20240901183120610.png)
+
+---
+
+##### Memory Hierarchy![image-20240902050832214](images/image-20240902050832214.png)
+
+CPU의 처리 속도에 비해 memory에 location에 대한 accessing은 long takes time이 소요된다.
+
+이에 대한 solution으로, CPU에 인접한 registers 및 cache를 두는  memory hierarchy를 따른다.
+
+
+
+---
+
+##### Registers - data registers, address registers
+
+![image-20240902051347749](images/image-20240902051347749.png)
+
+![image-20240902051503800](images/image-20240902051503800.png)
+
+![image-20240902051610127](images/image-20240902051610127.png)
+
+
+
+---
+
+![image-20240902052050618](images/image-20240902052050618.png)
+
+
+
+---
+
+![image-20240902052158403](images/image-20240902052158403.png)
+
+![image-20240902052342174](images/image-20240902052342174.png)
+
+
+
+---
+
+![image-20240902054650595](images/image-20240902054650595.png)
+
+![image-20240902055345132](images/image-20240902055345132.png)
+
+
+
+---
+
+![image-20240902055805939](images/image-20240902055805939.png)
+
+![image-20240902055817928](images/image-20240902055817928.png)
+
+---
+
+
+
+![image-20240902062243078](images/image-20240902062243078.png)
+
+![image-20240902062211384](images/image-20240902062211384.png)
+
+![image-20240902063354452](images/image-20240902063354452.png)
+
+
+
+---
+
+![image-20240902082318075](images/image-20240902082318075.png)
+
+![image-20240902083143689](images/image-20240902083143689.png)
+
+![image-20240902083825416](images/image-20240902083825416.png)

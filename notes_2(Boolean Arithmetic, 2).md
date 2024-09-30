@@ -12,14 +12,13 @@
 
 ### ALU
 
-**About Half Adder**
+- **Why?**
 
-- **Why?** 
-
-- **What?** CPU의 핵심적인 계산부품
+- **What?**: CPU의 핵심 부품으로써, 산술 및 논리 연산을 수행한다.
+  
   - **Interface** ![image-20240822223917117](images/image-20240822223917117.png)![image-20240822223944614](images/image-20240822223944614.png)
-
-- **How?** 
+  
+- **How?** 핵 ALU API를 구체적으로 구현해보자.
 
   - ~~~shell
     # ALU (Arithmetic Logic Unit):
@@ -81,4 +80,5 @@
         Mux16(a=fout, b=notfout, sel=no, out=out); # no
     }
     ~~~
+  
 
