@@ -18,24 +18,27 @@ software 부분(VM, compliler, programming language etc)까지도 직접 만들�
 
 - **Project 1: Boolean Logic**
 
-  - [project1(1)](notes/project 1(Boolean Logic)(1).md)
+  - [project1(1)](notes/1(Boolean Logic)(1).md)
 
-  - [project1(2)](notes/project 1(Boolean Logic)(2).md)
+  - [project1(2)](notes/1(Boolean Logic)(2).md)
 
-  - [project1(3)](notes/project 1(Boolean Logic)(3).md)
+  - [project1(3)](notes/1(Boolean Logic)(3).md)
 
 - **Project 2: Boolean Arithmetic**
-
-  - [project2(1)](notes/project 2(Boolean Arithmetic)(1).md)
-  - [project2(2)](notes/project 2(Boolean Arithmetic)(2).md)
-
+  - [project2(1)](notes/2(Boolean Arithmetic)(1).md)
+  - [project2(2)](notes/2(Boolean Arithmetic)(2).md)
+  
 - **Project 3: Memory**
+  - [project3(1)](notes/3(Memory)(1).md)
+  - [project3(2)](notes/3(Memory)(2).md)
+  
+- **Project 4: Machine Language**
+  - [project4: cheet sheet](notes/4(Machine Language)(1).md)
+  - [project4: exercise](notes/4(Machine Language)(2).md)
+  - [project4: project](notes/4(Machine Language)(3).md)
 
-  - [project3(1)](notes/project 3(Memory)(1).md)
-  - [project3(2)](notes/project 3(Memory)(2).md)
+- **Project 5: Computer Architecture**
+  - [project5](notes/5.md)
 
-- **Project 4:** 
-
-- **Project 5:** 
-
-- **Project 6:** 
+- **Project 6: Assembler**
+  - [project6](notes/6.md)
