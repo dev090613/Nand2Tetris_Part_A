@@ -1,0 +1,72 @@
+// File name: projects/5/CPU.hdl
+CHIP CPU {
+    IN  inM[16],
+        instruction[16],
+        reset;
+    
+    OUT outM[16],
+        writeM,
+        addressM[15],
+        pc[15];
+    
+    PARTS:
+    // Instruction decode - A or C instruction
+    Not(in=instruction[15], out=isAInstruction);
+    Not(in=isAInstruction, out=isCInstruction);
+    
+    // Load to A register
+    Mux16(a=instruction, b=ALUout, sel=instruction[15], out=ARegIn);
+    Or(a=isAInstruction, b=instruction[5], out=loadA);
+    ARegister(in=ARegIn, load=loadA, out=ARegOut, out[0..14]=addressM);
+    
+    // Load to D register
+    And(a=isCInstruction, b=instruction[4], out=loadD);
+    DRegister(in=ALUout, load=loadD, out=DRegOut);
+    
+    // Select ALU y input(A or M)
+    Mux16(a=ARegOut, b=inM, sel=instruction[12], out=ALUyInput);
+    
+    // ALU computation
+    ALU(x=DRegOut,
+        y=ALUyInput,
+        zx=instruction[11],
+        nx=instruction[10],
+        zy=instruction[9],
+        ny=instruction[8],
+        f=instruction[7],
+        no=instruction[6],
+        out=outM,
+        out=ALUout,
+        zr=isZero,
+        ng=isNegative);
+    
+    // Control memory write
+    And(a=isCInstruction, b=instruction[3], out=writeM);
+    
+    // JUMP
+    // isPositive, JGT
+    Not(in=isZero, out=notZero);
+    Not(in=isNegative, out=notNegative);
+    And(a=notZero, b=notNegative, out=isPositive);
+    
+    And(a=instruction[0], b=isPositive, out=jumpGT);
+
+    // JEP
+    And(a=instruction[1], b=isZero, out=jumpEQ);
+    // JLT
+    And(a=instruction[2], b=isNegative, out=jumpLT);
+    
+    // isJump
+    Or(a=jumpGT, b=jumpEQ, out=jumpGE);
+    Or(a=jumpGE, b=jumpLT, out=shouldJump);
+    
+    // doJump
+    And(a=isCInstruction, b=shouldJump, out=doJump);
+    
+    // PC
+    PC(in=ARegOut,
+       load=doJump,
+       inc=true,
+       reset=reset,
+       out[0..14]=pc);
+}
